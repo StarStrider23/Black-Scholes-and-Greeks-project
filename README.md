@@ -31,6 +31,8 @@ $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \big
 
 $$ d_{2} = d_{1} - \sigma \sqrt{T - t} $$
 
+Intuitively, $d_{1}$ is the z-score (how many standard deviations a data point is above or below the population mean) of the probability that the option will finish in the money (ITM) at maturity under the risk-neutral measure. $d_{2}$ is closely related to $d_{1}$, but adjusted upward by a volatility term which then accounts for the expected growth of the stock price and the uncertainty over time. 
+
 # Methodology
 
 # Structure
