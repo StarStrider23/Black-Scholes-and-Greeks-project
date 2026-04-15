@@ -116,6 +116,14 @@ $$ \sigma_{n+1} = \sigma_{n} - \frac{C_{BS}(\sigma_{n}) - C_{market}}{\nu(\sigma
 
 # Methodology
 
+The project follows a structured quantitative approach combining analytical modeling, numerical methods and simulation. First, the Black–Scholes model is implemented, including closed-form pricing and analytical expressions for the Greeks, alongside numerical approximations for validation.
+
+A Monte Carlo framework is then developed to simulate the underlying asset dynamics under the risk-neutral measure. Convergence properties are analyzed and variance reduction techniques, specifically control variates, are applied to improve computational efficiency.
+
+To study risk management, a discrete-time delta hedging strategy is implemented. The hedging performance is evaluated by analyzing the replication error as a function of rebalancing frequency and market parameters.
+
+Finally, implied volatility is computed by numerically inverting the Black–Scholes formula, linking model outputs to observed market prices. Throughout the project, analytical and numerical results are systematically compared to assess accuracy, stability and consistency across methods.
+
 # Structure
 
 # Results
