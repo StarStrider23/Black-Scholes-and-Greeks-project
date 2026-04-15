@@ -73,7 +73,7 @@ $$ \Theta = \frac{\partial V}{\partial t} $$
 ​
 However, in practice one sometimes sets t to zero which then changes the definition.
 
-$$ \Theta = -frac{\partial V}{\partial T} $$
+$$ \Theta = -\frac{\partial V}{\partial T} $$
 
 This convention is also used in the project.
 
