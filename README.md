@@ -103,6 +103,17 @@ which leads to the Black–Scholes PDE.
 
 To put it simply, the idea is to offset the option’s exposure to the underlying by taking an opposite position in the stock. Since Delta measures how much the option price moves with the stock, holding $−Δ$ units of the underlying stock cancels the first-order price risk. As the stock price changes, Delta changes as well, so the hedge must be continuously rebalanced. In theory, continuous rebalancing removes all randomness from the portfolio, making it risk-free. In practice, rebalancing is discrete, which introduces hedging error that grows with volatility and lower rebalancing frequency.
 
+## Implied Volatility (IV)
+
+Implied volatility is the volatility parameter that makes the Black–Scholes model match the observed market price of an option. Instead of being directly observed, it is obtained by inverting the pricing formula.
+Formally, implied volatility $\sigma_{imp}$ is defined as the solution to:
+
+$$ C_{market} = C_{BS}(S, K, r, T, \sigma_{imp}) $$
+
+Since the Black–Scholes formula is not analytically invertible in $\sigma$ the implied volatility must be computed numerically, typically using root-finding methods such as Newton–Raphson:
+
+$$ \sigma_{n+1} = \sigma_{n} - \frac{C_{BS}(\sigma_{n}) - C_{market}}{\vega(\sigma_{n})} $$
+​
 # Methodology
 
 # Structure
