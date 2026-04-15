@@ -61,8 +61,8 @@ It captures the curvature of the option price, indicating how stable the Delta h
 
 Vega measures sensitivity to volatility:
 
-$$ \nu = \frac{\partial V}{\partial \sigma} $$
-​
+$$ \Theta = \frac{\partial V}{\partial \sigma} $$
+
 It reflects how much the option price changes when market expectations of volatility change. Options are typically most sensitive to volatility when they are at-the-money (ATM).
 
 ### Theta ($\Theta$)
