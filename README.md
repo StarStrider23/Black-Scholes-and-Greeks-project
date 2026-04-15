@@ -99,7 +99,9 @@ In the Black–Scholes framework no-arbitrage implies:
 
 $$ d \Pi = r \Pi dt $$
 
-which leads to the Black–Scholes PDE. In practice, hedging is discrete, so $\Delta$ is updated at finite intervals, resulting in hedging error that depends on rebalancing frequency and volatility.
+which leads to the Black–Scholes PDE. 
+
+To put it simply, the idea is to offset the option’s exposure to the underlying by taking an opposite position in the stock. Since Delta measures how much the option price moves with the stock, holding $−Δ$ units of the underlying stock cancels the first-order price risk. As the stock price changes, Delta changes as well, so the hedge must be continuously rebalanced. In theory, continuous rebalancing removes all randomness from the portfolio, making it risk-free. In practice, rebalancing is discrete, which introduces hedging error that grows with volatility and lower rebalancing frequency.
 
 # Methodology
 
