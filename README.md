@@ -29,7 +29,7 @@ is the standard normal cumulative distribution function. Finally, $d_{1}$ and $d
 
 $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \bigg(r + \frac{\sigma^2}{2}\bigg) (T - t) \bigg]$$
 
-$$ d_{2} = d_{1} - \sigma (T - t) $$
+$$ d_{2} = d_{1} - \sigma \sqrt{T - t} $$
 
 # Methodology
 
