@@ -1,7 +1,7 @@
 import numpy as np
 
-from monte_carlo import monte_carlo
-from black_scholes import BlackScholes
+from monte_carlo.monte_carlo import monte_carlo
+from blackscholes.black_scholes import BlackScholes
 
 def delta_hedging(S_0=100, K=100, r=0.05, sigma=0.2, T=1, steps=252, 
                   n_sim=10000, Z=None, rng=None, return_paths=True, option="call"):
