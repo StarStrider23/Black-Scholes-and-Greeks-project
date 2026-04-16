@@ -124,6 +124,8 @@ To study risk management, a discrete-time delta hedging strategy is implemented.
 
 Finally, implied volatility is computed by numerically inverting the Black–Scholes formula, linking model outputs to observed market prices. Throughout the project, analytical and numerical results are systematically compared to assess accuracy, stability and consistency across methods.
 
+All simulations and analyses are conducted for European call options even though the implemented framework supports both calls and puts. However, this restriction is without loss of generality, since results for put options follow directly from put–call parity.
+
 # Structure
 
 # Results
