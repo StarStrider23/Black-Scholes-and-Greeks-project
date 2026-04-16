@@ -130,13 +130,13 @@ All simulations and analyses are conducted for European call options even though
 
 # Results
 
-## Part 1. Delta Hedging.
+## Delta Hedging.
 
 <img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />
 
 <img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />
 
-## Part 2. Monte Carlo Convergence.
+## Monte Carlo Convergence.
 
 <img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />
 
