@@ -130,23 +130,37 @@ All simulations and analyses are conducted for European call options even though
 
 # Results
 
+## Part 1. Delta Hedging.
+
 <img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />
 
 <img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />
 
+## Part 2. Monte Carlo Convergence.
+
 <img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />
+
+## Monte Carlo vs Black-Scholes Option Pricing.
 
 <img width="1200" height="600" alt="MC vs BS Option Pricing" src="https://github.com/user-attachments/assets/f60922bf-2aa1-432c-9cf7-6eea705bf593" />
 
 <img width="1200" height="600" alt="MC Pricing Error vs Underlying Price" src="https://github.com/user-attachments/assets/4e45a273-598e-4004-91e5-bfb049c3c1a6" />
 
+## Monte Carlo vs Black-Scholes, The Greeks
+
+### Delta
+
 <img width="1200" height="600" alt="MC vs BS Delta" src="https://github.com/user-attachments/assets/f0d54b1c-a1ab-48c8-94cd-3314677e830d" />
 
 <img width="1200" height="600" alt="MC Delta Error vs Underlying Price" src="https://github.com/user-attachments/assets/e7d464d8-6ef7-41fc-b004-55822adeadd9" />
 
+### Gamma
+
 <img width="1200" height="600" alt="MC vs BS Gamma" src="https://github.com/user-attachments/assets/8592b790-39c1-46be-a9c5-b4c8481da303" />
 
 <img width="1200" height="600" alt="MC vs BS Gamma Error" src="https://github.com/user-attachments/assets/a77f478e-f908-4fe8-81eb-113a047f01ad" />
+
+## Implied Volatility
 
 <img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/7e8caccd-ee53-489e-9260-78d908558899" />
 
