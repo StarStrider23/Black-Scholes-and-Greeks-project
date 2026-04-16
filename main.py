@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import yfinance as yf
 import datetime as dt
 
-from black_scholes import BlackScholes
-from monte_carlo import monte_carlo
-from delta_hedging import delta_hedging
+from blacksholes.black_scholes import BlackScholes
+from monte_carlo.monte_carlo import monte_carlo
+from blackscholes.delta_hedging import delta_hedging
 
 # Hedging Error vs Rebalancing Frequency
 
