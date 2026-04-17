@@ -182,7 +182,9 @@ Comparison of Monte Carlo and Black–Scholes pricing across different market co
 
 ## Implied Volatility
 
-The option expiration date is 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
+Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method, such as Newton–Raphson, applied to match model prices to observed option prices.
+
+The project considered options with prices near the at-the-money (ATM) region, namely $0.9S < K < 1.1S$, with expiration date 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) of the simulation was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
 
 <img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/005600d9-037a-42d4-b310-e07eb93f7c10" />  
 
@@ -199,8 +201,9 @@ The option expiration date is 2026-05-15, which implies that T = 28 days or T = 
 |      275       | False |       0.29090065      |     0.28955827    |       0.46       |
 |      280       | False |       0.28736064      |     0.28696143    |       0.14       |
 |      285       | False |       0.28601788      |     0.28625329    |       0.08       |
-|      290       | False |       0.28613995      |     0.28800836    |       0.65       |
+|      290       | False |       0.28613995      |     0.28800836    |       0.65       |  
 
+The numerical procedure converges efficiently to the implied volatility, demonstrating the stability of the implementation. The results highlight how implied volatility serves as a bridge between observed market prices and model parameters.
 
 # Discussion
 
