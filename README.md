@@ -134,13 +134,25 @@ https://black-scholes-and-greeks-project.streamlit.app
 
 ## Delta Hedging.
 
+Investigation of how rebalancing frequency affects hedging error and 
+
+
+
 <img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />
 
 <img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />
 
 ## Monte Carlo Convergence.
 
-<img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />
+Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results are averaged across 100 simulation runs to reduce Monte Carlo variability.
+
+<img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />  
+
+| Number of simulations |   100  |   500  |  1000  |  5000  |  10000 |  50000 | 100000 |
+| --------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+|          RMSE         | 0.0530 | 0.0247 | 0.0181 | 0.0083 | 0.0054 | 0.0028 | 0.0018 |  
+
+The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the root mean square error (RMSE) decreases with number of simulations. This is due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(1/\sqrt(N))$ behavior.  
 
 ## Monte Carlo vs Black-Scholes Option Pricing.
 
