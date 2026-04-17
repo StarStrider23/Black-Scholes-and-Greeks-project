@@ -126,7 +126,7 @@ Finally, implied volatility is computed by numerically inverting the Black–Sch
 
 All simulations and analyses are conducted for European call options even though the implemented framework supports both calls and puts. However, this restriction is without loss of generality, since results for put options follow directly from put–call parity.
 
-If not stated otherwise, the computations are done for the following values: $S$ = 100, $K$ = 100, $r$ = 0.05, $\sigma$ = 0.2, $T$ = 1, number of steps = 252
+If not stated otherwise, the computations are done for the following values: $S$ = 100, $K$ = 100, $r$ = 0.05, $\sigma$ = 0.2, $T$ = 1, number of steps = 252 and number of simulations = 100000. 
 
 # Structure
 
@@ -136,7 +136,7 @@ The blackscholes folder contains the implemented class for Black-Scholes model, 
 
 ## Black-Scholes Validation
 
-Validate of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters.  
+Validate of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters. The set of underlying stock prices used are in the range of 50 to 150.
 
 <img width="1200" height="600" alt="Delta" src="https://github.com/user-attachments/assets/dac62f7a-0241-467a-a0f0-16fe15ce321d" />  
 
@@ -150,7 +150,7 @@ https://black-scholes-numerical-greeks-error.streamlit.app
 
 ## Monte Carlo Convergence.
 
-Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations are averaged across 100 simulation runs to reduce Monte Carlo variability.
+Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations (100, 500, 1000, 5000, 10000, 50000, 100000) are averaged across 100 simulation runs to reduce Monte Carlo variability. 
 
 <img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />  
 
@@ -162,7 +162,7 @@ The Monte Carlo estimator converges to the Black–Scholes benchmark as the numb
 
 ## Monte Carlo vs Black-Scholes.
 
-Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results.
+Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results. The set of underlying stock prices used are in the range of 50 to 150.
 
 ### Option Pricing.
 
@@ -172,11 +172,15 @@ Comparison of Monte Carlo and Black–Scholes pricing across different market co
 
 ### Delta
 
+Step size h = 0.2.  
+
 <img width="1200" height="600" alt="MC vs BS Delta" src="https://github.com/user-attachments/assets/f0d54b1c-a1ab-48c8-94cd-3314677e830d" />
 
 <img width="1200" height="600" alt="MC Delta Error vs Underlying Price" src="https://github.com/user-attachments/assets/e7d464d8-6ef7-41fc-b004-55822adeadd9" />
 
 ### Gamma
+
+Number of simulations is 50000. Step size h = 0.5.  
 
 <img width="1200" height="600" alt="MC vs BS Gamma" src="https://github.com/user-attachments/assets/8592b790-39c1-46be-a9c5-b4c8481da303" />  
   
@@ -186,7 +190,7 @@ Monte Carlo estimates are consistent with Black–Scholes results, validating bo
 
 ## Delta Hedging.
 
-Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies.  
+Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies. Number of steps are steps = (10, 25, 50, 100, 252, 500).  
 
 <img width="1200" height="600" alt="HE vs RF" src="https://github.com/user-attachments/assets/20a531d4-b799-44ef-9b3b-b192349dc66e" />
 
