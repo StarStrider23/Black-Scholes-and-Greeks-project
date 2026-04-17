@@ -138,7 +138,7 @@ Validate of the correctness of the Black–Scholes implementation by comparing a
 
 <img width="1200" height="600" alt="Delta" src="https://github.com/user-attachments/assets/dac62f7a-0241-467a-a0f0-16fe15ce321d" />  
 
-<img width="1200" height="600" alt="Gamma" src="https://github.com/user-attachments/assets/431fd447-5715-4704-a568-36c464b1dd39" />  
+<img width="1200" height="600" alt="Gamma" src="https://github.com/user-attachments/assets/edb75717-d1c7-4f48-8a9c-fa2656ba2d4c" />  
 
 The numerical estimates closely match the analytical values across all tested parameters, confirming the correctness and stability of the implementation. Small discrepancies arise due to finite difference approximation errors, particularly for higher-order Greeks such as Gamma.
 
