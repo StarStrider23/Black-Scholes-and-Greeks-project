@@ -154,19 +154,19 @@ Analysis of the convergence of the Monte Carlo estimator and evaluation of the i
 
 | Number of simulations |   100  |   500  |  1000  |  5000  |  10000 |  50000 | 100000 |
 | --------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-|          RMSE         | 0.0530 | 0.0247 | 0.0181 | 0.0083 | 0.0054 | 0.0028 | 0.0018 |  
+|    Standard Error     | 0.0530 | 0.0247 | 0.0181 | 0.0083 | 0.0054 | 0.0028 | 0.0018 |  
 
-The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the root mean square error (RMSE) decreases with number of simulations. This is due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
+The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the Standard Error (SE) decreases with number of simulations. This is partially due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
 
 ## Monte Carlo vs Black-Scholes Option Pricing.
-
-Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities.
 
 <img width="1200" height="600" alt="MC vs BS Option Pricing" src="https://github.com/user-attachments/assets/f60922bf-2aa1-432c-9cf7-6eea705bf593" />
 
 <img width="1200" height="600" alt="MC Pricing Error vs Underlying Price" src="https://github.com/user-attachments/assets/4e45a273-598e-4004-91e5-bfb049c3c1a6" />
 
 ## Monte Carlo vs Black-Scholes, The Greeks
+
+Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results.
 
 ### Delta
 
@@ -176,9 +176,11 @@ Comparison of Monte Carlo and Black–Scholes pricing across different market co
 
 ### Gamma
 
-<img width="1200" height="600" alt="MC vs BS Gamma" src="https://github.com/user-attachments/assets/8592b790-39c1-46be-a9c5-b4c8481da303" />
-
-<img width="1200" height="600" alt="MC vs BS Gamma Error" src="https://github.com/user-attachments/assets/a77f478e-f908-4fe8-81eb-113a047f01ad" />
+<img width="1200" height="600" alt="MC vs BS Gamma" src="https://github.com/user-attachments/assets/8592b790-39c1-46be-a9c5-b4c8481da303" />  
+  
+<img width="1200" height="600" alt="MC vs BS Gamma Error" src="https://github.com/user-attachments/assets/a77f478e-f908-4fe8-81eb-113a047f01ad" />  
+  
+Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma, reflecting the increased difficulty of estimating higher-order derivatives via simulation.
 
 ## Implied Volatility
 
