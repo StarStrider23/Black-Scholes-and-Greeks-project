@@ -130,6 +130,8 @@ All simulations and analyses are conducted for European call options even though
 
 # Results
 
+https://black-scholes-and-greeks-project.streamlit.app
+
 ## Delta Hedging.
 
 <img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />
@@ -162,10 +164,25 @@ All simulations and analyses are conducted for European call options even though
 
 ## Implied Volatility
 
-<img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/7e8caccd-ee53-489e-9260-78d908558899" />
+<img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/7e8caccd-ee53-489e-9260-78d908558899" />  
 
+S = 266.42999267578125 $
+    
 
-https://black-scholes-and-greeks-project.streamlit.app
+| Strike Price $ | ITM   | Actual implied volatiltiy | NR implied volatilty | Absolute error % |
+| -------------- | ----- | ------------------------- | -------------------- | ---------------- |
+|      240       | True  |         0.38135384        |      0.34410769      |        9.77      |
+|      245       | True  |         0.35974761        |      0.33263223      |        7.54      |
+|      250       | True  |         0.3440007         |      0.32293332      |        6.12      |
+|      255       | True  |         0.32684999        |      0.31221437      |        4.48      |
+|      260       | True  |         0.31189653        |      0.30322305      |        2.78      |
+|      265       | True  |         0.30164273        |      0.29711033      |        1.50      |
+|      270       | False |         0.29590548        |      0.29235877      |        1.20      |
+|      275       | False |         0.29090065        |      0.28955827      |        0.46      |
+|      280       | False |         0.28736064        |      0.28696143      |        0.14      |
+|      285       | False |         0.28601788        |      0.28625329      |        0.08      |
+|      290       | False |         0.28613995        |      0.28800836      |        0.65      |
+
 
 # Discussion
 
