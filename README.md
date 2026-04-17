@@ -142,16 +142,6 @@ Validate of the correctness of the Black–Scholes implementation by comparing a
 
 The numerical estimates closely match the analytical values across all tested parameters, confirming the correctness and stability of the implementation. Small discrepancies arise due to finite difference approximation errors, particularly for higher-order Greeks such as Gamma.
 
-## Delta Hedging.
-
-Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies.  
-
-<img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />  
-
-<img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />  
-
-Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility, illustrating the practical limitations of continuous-time assumptions.  
-
 ## Monte Carlo Convergence.
 
 Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations are averaged across 100 simulation runs to reduce Monte Carlo variability.
@@ -188,6 +178,16 @@ Comparison of Monte Carlo and Black–Scholes pricing across different market co
   
 Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma, reflecting the increased difficulty of estimating higher-order derivatives via simulation.
 
+## Delta Hedging.
+
+Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies.  
+
+<img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />  
+
+<img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />  
+
+Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility, illustrating the practical limitations of continuous-time assumptions.  
+
 ## Implied Volatility
 
 Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method, such as Newton–Raphson, applied to match model prices to observed option prices.
@@ -214,6 +214,15 @@ The numerical procedure converges efficiently to the implied volatility, demonst
 
 # Discussion
 
-# Outlook
+The results demonstrate that the implemented methods behave consistently with theoretical expectations. The Black–Scholes model provides stable and accurate analytical benchmarks, and the numerical approximation of Greeks shows nearly-perfect, if not perfect, correspondence with analytical values across the tested range. Any remaining discrepancies are minimal and primarily driven by finite difference discretization, with higher-order Greeks such as Gamma exhibiting greater sensitivity to the choice of step size. This is why the step sizes for each of the Greeks were chosen carefully beforehand. 
 
+Monte Carlo simulation produces unbiased estimates that converge to the analytical solution. The convergence behavior follows the expected $O(N^{-1/2})$ pattern. To make this comparison explicit, the Monte Carlo error and the reference curve were normalized to start at the same point since the Monte Carlo estimator is scaled by a constant factor that depends on variance. This normalization allows for a clearer comparison of convergence rates rather than absolute levels. 
+
+The application of control variates (using the underlying asset price as the control) significantly reduces the variance of the estimator. This choice is both natural and effective as the control is highly correlated with the payoff. As a result, the standard error decreases noticeably and continues to decline with the number of simulation which improves convergence without additional computational cost.
+
+The comparison between Monte Carlo and Black–Scholes shows strong consistency in pricing while also illustrating the increased difficulty of estimating sensitivities numerically within a simulation framework. This is particularly evident for second-order quantities such as Gamma, where noise in the estimator is more pronounced.
+
+The delta hedging analysis emphasizes the gap between theoretical and practical implementation. While continuous hedging eliminates risk in theory, discrete rebalancing introduces replication error. The results show that the standard deviation of the hedging error decreases as the rebalancing frequency increases, consistent with theoretical expectations. The decay appears to be approximately inverse or even exponential, reflecting the reduction of discretization error as hedging becomes more frequent, although it remains non-zero due to the discrete nature of rebalancing.
+
+Finally, the implied volatility results highlight deviations between model-implied and observed market behavior. The computed implied volatility exhibits a similar overall shape to the market data but differs in level, particularly for strikes far from the current stock price. In the provided results, the discrepancy is largest (around 10%) for deep in- or out-of-the-money options and decreases as the strike approaches the at-the-money region, where the estimates converge more closely. Beyond this region, the curves diverge again, though more gradually.
 
