@@ -1,4 +1,4 @@
-# Black-Scholes and Greeks Project
+# Implementing the Black-Scholes Model with Applications
 
 Project by Alexsey Chernichenko
 
