@@ -128,9 +128,9 @@ All simulations and analyses are conducted for European call options even though
 
 # Structure
 
-# Results
+The blackscholes folder contains the implemented class for Black-Scholes model, the delta_hedging function and an interactive tool greeks_app, that can be accessed by a link below in the result section. The monte_carlo folder includes the Monte Carlo simulation engine file. The data folder contains the calls_snapshot.csv and option_expiration_date.txt files needed for the implied olatility part. The csv files contains a snapshot of call option prices while the txt files simply contains the information on the maturity date of the options. In the main path, there's  requirements.txt file that is necessary to ensure the proper work of the greeks_app.py interactive tool. Finally, main.py ties everything together and executes the workflow.  
 
-https://black-scholes-and-greeks-project.streamlit.app
+# Results
 
 ## Black-Scholes Validation
 
@@ -141,6 +141,10 @@ Validate of the correctness of the Black–Scholes implementation by comparing a
 <img width="1200" height="600" alt="Gamma" src="https://github.com/user-attachments/assets/edb75717-d1c7-4f48-8a9c-fa2656ba2d4c" />  
 
 The numerical estimates closely match the analytical values across all tested parameters, confirming the correctness and stability of the implementation. Small discrepancies arise due to finite difference approximation errors, particularly for higher-order Greeks such as Gamma.
+
+Moreover, a Streamlit-based interactive tool was developed to visualize numerical errors in Greek approximations as a function of the step size h. By varying model parameters (S, K, r, σ, T), the app provides insight into the stability of finite difference methods and was used to determine near-optimal step sizes for each Greek. The tool can be accessed in the link below.
+
+https://black-scholes-numerical-greeks-error.streamlit.app
 
 ## Monte Carlo Convergence.
 
@@ -214,7 +218,7 @@ The numerical procedure converges efficiently to the implied volatility, demonst
 
 # Discussion
 
-The results demonstrate that the implemented methods behave consistently with theoretical expectations. The Black–Scholes model provides stable and accurate analytical benchmarks, and the numerical approximation of Greeks shows nearly-perfect, if not perfect, correspondence with analytical values across the tested range. Any remaining discrepancies are minimal and primarily driven by finite difference discretization, with higher-order Greeks such as Gamma exhibiting greater sensitivity to the choice of step size. This is why the step sizes for each of the Greeks were chosen carefully beforehand. 
+The results demonstrate that the implemented methods behave consistently with theoretical expectations. The Black–Scholes model provides stable and accurate analytical benchmarks, and the numerical approximation of Greeks shows nearly-perfect, if not perfect, correspondence with analytical values across the tested range. Any remaining discrepancies are minimal and primarily driven by finite difference discretization, with higher-order Greeks such as Gamma exhibiting greater sensitivity to the choice of step size. This is why the step sizes for each of the Greeks were chosen carefully beforehand using the interactive tool. 
 
 Monte Carlo simulation produces unbiased estimates that converge to the analytical solution. The convergence behavior follows the expected $O(N^{-1/2})$ pattern. To make this comparison explicit, the Monte Carlo error and the reference curve were normalized to start at the same point since the Monte Carlo estimator is scaled by a constant factor that depends on variance. This normalization allows for a clearer comparison of convergence rates rather than absolute levels. 
 
