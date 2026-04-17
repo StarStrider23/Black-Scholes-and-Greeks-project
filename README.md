@@ -164,6 +164,8 @@ https://black-scholes-and-greeks-project.streamlit.app
 
 ## Implied Volatility
 
+The option expiration date is 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years.  
+
 <img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/38a5a74f-21ff-4b43-afe4-13cdd2b5e67e" />
  
 
