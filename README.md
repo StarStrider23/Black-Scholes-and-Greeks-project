@@ -132,15 +132,19 @@ All simulations and analyses are conducted for European call options even though
 
 https://black-scholes-and-greeks-project.streamlit.app
 
+## Black-Scholes validation
+
+
+
 ## Delta Hedging.
 
-Investigation of how rebalancing frequency affects hedging error and 
+Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies.  
 
+<img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />  
 
+<img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />  
 
-<img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />
-
-<img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />
+Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility, illustrating the practical limitations of continuous-time assumptions.  
 
 ## Monte Carlo Convergence.
 
@@ -155,6 +159,8 @@ Analysis of the convergence of the Monte Carlo estimator and evaluation of the i
 The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the root mean square error (RMSE) decreases with number of simulations. This is due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(1/\sqrt(N))$ behavior.  
 
 ## Monte Carlo vs Black-Scholes Option Pricing.
+
+Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities.
 
 <img width="1200" height="600" alt="MC vs BS Option Pricing" src="https://github.com/user-attachments/assets/f60922bf-2aa1-432c-9cf7-6eea705bf593" />
 
